@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect, useState } from "react";
+import { getAllPokemons } from "./components/api/api";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import List from "./components/List";
+import "./App.css";
 
-function App() {
+const App = () => {
+  const [pokemons, setPokemons] = useState(null);
+  useEffect(() => {
+    const getPokemons = async () => {
+      const result = await getAllPokemons();
+      setPokemons(result);
+    };
+    getPokemons();
+  }, []);
+
+  console.log(pokemons);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <Route path="/">
+          {pokemons ? <List data={pokemons} /> : "loading"}
+        </Route>
+      </div>
+    </Router>
   );
-}
-
+};
 export default App;
