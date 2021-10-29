@@ -1,7 +1,7 @@
 import { useHistory } from "react-router-dom";
 import Button from "@mui/material/Button";
 
-const ListElement = ({ name, url, index }) => {
+const ListElement = ({ name, index }) => {
   let history = useHistory();
   const handleClick = () => {
     history.push(name);

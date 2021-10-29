@@ -1,11 +1,14 @@
 import React from "react";
+import { useContext } from "react";
 import { useForm } from "react-hook-form";
+import { AppContext } from "../../AppContext/AppContext";
 import { Divider, Paper, InputBase, IconButton } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import ClearIcon from "@mui/icons-material/Clear";
 import "./search.css";
 
 const Search = () => {
+  const { searchPokemons } = useContext(AppContext);
   const {
     register,
     handleSubmit,
@@ -15,10 +18,8 @@ const Search = () => {
   } = useForm();
 
   const onSubmit = (data) => {
-    watch();
-    console.log("onSubmit");
-    console.log(data);
-    // showUsers(data.search.toLowerCase());
+    console.log(data.search);
+    return searchPokemons(data.search);
   };
 
   const clear = () => {
@@ -31,7 +32,7 @@ const Search = () => {
     <form onSubmit={handleSubmit(onSubmit)}>
       <Paper
         style={{
-          backgroundColor: "yellow",
+          backgroundColor: "rgb(255, 203, 5)",
           padding: "2px 4px",
           display: "flex",
           alignItems: "center",
