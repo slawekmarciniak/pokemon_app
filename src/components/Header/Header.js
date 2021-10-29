@@ -1,3 +1,4 @@
+import Search from "../Search";
 import "./header.css";
 
 const Header = () => {
@@ -8,6 +9,7 @@ const Header = () => {
         src="https://upload.wikimedia.org/wikipedia/commons/9/98/International_Pok%C3%A9mon_logo.svg"
         alt="pokemon_logo"
       />
+      <Search />
       <img className="header__image" src="./Pokemon.png" alt="pokemon__image" />
     </div>
   );

@@ -2,29 +2,33 @@ const Card = ({ pokemon }) => {
   console.log(pokemon);
   return (
     <div className="card">
-      <div className="card__img">
-        <img src={pokemon.sprites.front_default} alt="" />
+      <img className="card__img" src={pokemon.sprites.front_default} alt="" />
+      <div className="feature">
+        <span className="feature__name">name:</span>
+        <span className="feature__text">{pokemon.name}</span>
       </div>
-      <div className="card__name">{pokemon.name}</div>
-      <div className="card__types">
-        <p>types</p>
+      <div className="feature">
+        <span className="feature__name">types:</span>
         {pokemon.types.map((type) => (
-          <div className="card__type">{type.type.name}</div>
+          <div className="feature__element">{type.type.name}</div>
         ))}
       </div>
-      <div className="card__info">
-        <div className="card__data card__data--weight">
-          <p className="title">Weight</p>
-          <p>{pokemon.weight}</p>
-        </div>
-        <div className="card__data card__data--height">
-          <p className="title">Height</p>
-          <p>{pokemon.height}</p>
-        </div>
-        <div className="card__data card__data--ability">
-          <p className="title">Ability</p>
-          <p>{pokemon.abilities[0].ability.name}</p>
-        </div>
+      <div className="feature">
+        <span className="feature__name">weight:</span>
+        <span className="feature__text">{pokemon.weight}</span>
+      </div>
+
+      <div className="feature">
+        <span className="feature__name">height:</span>
+        <span className="feature__text">{pokemon.height}</span>
+      </div>
+      <div className="feature">
+        <p className="feature__name">abilities:</p>
+        {pokemon.abilities.map((el) => (
+          <div className="feature__element feature__element--abilities">
+            {el.ability.name}
+          </div>
+        ))}
       </div>
     </div>
   );

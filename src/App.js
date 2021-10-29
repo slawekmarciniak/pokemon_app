@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import { useContext } from "react";
+import { AppContext } from "./AppContext/AppContext";
 import { getAllPokemons } from "./api/api";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import PokemonDetails from "./components/Pages";
@@ -8,6 +10,8 @@ import Search from "./components/Search";
 import "./app.css";
 
 const App = () => {
+  const { number } = useContext(AppContext);
+  console.log(number);
   const [pokemons, setPokemons] = useState(null);
   useEffect(() => {
     const getPokemons = async () => {
