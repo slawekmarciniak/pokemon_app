@@ -17,7 +17,6 @@ const App = () => {
     getPokemons();
   }, []);
 
-  console.log(pokemons);
   return (
     <Router>
       <div className="app">

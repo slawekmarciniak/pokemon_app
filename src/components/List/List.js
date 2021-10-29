@@ -49,7 +49,7 @@ const List = ({ data }) => {
         </div>
         <ListMUI>
           {list.map((el) => (
-            <ListElement name={el.name} url={el.url} />
+            <ListElement key={el.nam} name={el.name} url={el.url} />
           ))}
         </ListMUI>
       </div>

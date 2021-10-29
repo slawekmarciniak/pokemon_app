@@ -19,7 +19,7 @@ export const getAllPokemons = () => {
 
 export const getPokemon = (name) => {
   return axios
-    .get(`${baseUrl}${name}`)
-    .then((response) => response.data.results)
+    .get(`${baseUrl}/${name}`)
+    .then((response) => response.data)
     .catch((err) => console.log(err));
 };
