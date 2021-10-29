@@ -48,8 +48,13 @@ const List = ({ data }) => {
           </Button>
         </div>
         <ListMUI>
-          {list.map((el) => (
-            <ListElement key={el.nam} name={el.name} url={el.url} />
+          {list.map((el, index) => (
+            <ListElement
+              key={el.name}
+              name={el.name}
+              url={el.url}
+              index={index}
+            />
           ))}
         </ListMUI>
       </div>
