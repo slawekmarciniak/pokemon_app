@@ -1,0 +1,31 @@
+
+.list {
+    min-width: 300px;
+    max-width: 1000px;
+    padding: 30px;
+    margin: auto;
+}
+
+
+
+.pagination {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-transform: uppercase;
+    padding: 30px;
+}
+
+.pagination__button {
+    font-weight: bold;
+}
+
+
+
+.list__item {
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}

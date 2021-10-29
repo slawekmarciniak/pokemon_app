@@ -1,8 +1,11 @@
 import { useEffect, useState } from "react";
-import { getAllPokemons } from "./components/api/api";
+import { getAllPokemons } from "./api/api";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import PokemonDetails from "./components/Pages";
+import Header from "./components/Header";
 import List from "./components/List";
-import "./App.css";
+import Search from "./components/Search";
+import "./app.css";
 
 const App = () => {
   const [pokemons, setPokemons] = useState(null);
@@ -17,10 +20,17 @@ const App = () => {
   console.log(pokemons);
   return (
     <Router>
-      <div className="App">
-        <Route path="/">
-          {pokemons ? <List data={pokemons} /> : "loading"}
-        </Route>
+      <div className="app">
+        <Header />
+        <Switch>
+          <Route path="/:pokemonName">
+            <PokemonDetails />
+          </Route>
+          <Route path="/">
+            {/* <Search /> */}
+            {pokemons ? <List data={pokemons} /> : "loading"}
+          </Route>
+        </Switch>
       </div>
     </Router>
   );

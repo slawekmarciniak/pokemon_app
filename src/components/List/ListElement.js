@@ -1,19 +1,16 @@
-import ListItem from "@mui/material/ListItemButton";
-import ListItemText from "@mui/material/ListItemText";
-import Avatar from "@mui/material/Avatar";
-import ListItemAvatar from "@mui/material/ListItemAvatar";
+import { useHistory } from "react-router-dom";
+import Button from "@mui/material/Button";
 
 const ListElement = ({ name, url }) => {
+  let history = useHistory();
   const handleClick = () => {
-    console.log(url);
+    history.push(name);
   };
   return (
-    <ListItem onClick={handleClick}>
-      <ListItemAvatar>
-        <Avatar alt={name} src="/static/images/avatar/1.jpg" />
-      </ListItemAvatar>
-      <ListItemText style={{ textTransform: "uppercase" }} primary={name} />
-    </ListItem>
+    <li className="list__item" onClick={handleClick}>
+      {name}
+      <Button color="inherit">check details</Button>
+    </li>
   );
 };
 
