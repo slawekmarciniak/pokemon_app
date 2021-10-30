@@ -6,6 +6,7 @@ const AppProvider = ({ children }) => {
   const [pokemons, setPokemons] = useState(null);
   const [foundPokemons, setFoundPokemons] = useState(null);
   const [isSearching, setIsSearching] = useState(false);
+  const [page, setPage] = useState(1);
 
   const searchPokemons = (name) => {
     const duplicates = pokemons.filter(
@@ -23,6 +24,8 @@ const AppProvider = ({ children }) => {
         searchPokemons,
         foundPokemons,
         isSearching,
+        page,
+        setPage,
       }}
     >
       {children}
