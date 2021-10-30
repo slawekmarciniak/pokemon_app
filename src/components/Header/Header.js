@@ -1,7 +1,11 @@
-import Search from "../Search";
+import { useContext } from "react";
+import { AppContext } from "../../AppContext/AppContext";
+
+import SearchBar from "../SearchBar";
 import "./header.css";
 
 const Header = () => {
+  const { isShowCard } = useContext(AppContext);
   return (
     <div className="header">
       <img
@@ -9,7 +13,7 @@ const Header = () => {
         src="https://upload.wikimedia.org/wikipedia/commons/9/98/International_Pok%C3%A9mon_logo.svg"
         alt="pokemon_logo"
       />
-      <Search />
+      {!isShowCard && <SearchBar />}
       <img className="header__image" src="./Pokemon.png" alt="pokemon__image" />
     </div>
   );

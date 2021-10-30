@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useContext } from "react";
 import { AppContext } from "../../AppContext/AppContext";
 import { getAllPokemons } from "../../api/api";

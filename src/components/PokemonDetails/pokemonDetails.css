@@ -48,3 +48,19 @@
     background-color: #222;
     border-radius: 50%;
 }
+
+.loader {
+    color: #FFCB05;
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 1.2px;
+    margin: 50px auto;
+    width: 150px;
+}
+
+.backButtonContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+}

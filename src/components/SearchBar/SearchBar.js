@@ -7,12 +7,11 @@ import SearchIcon from "@mui/icons-material/Search";
 import ClearIcon from "@mui/icons-material/Clear";
 import "./search.css";
 
-const Search = () => {
+const SearchBar = () => {
   const { searchPokemons } = useContext(AppContext);
   const {
     register,
     handleSubmit,
-    watch,
     reset,
     formState: { errors },
   } = useForm();
@@ -24,7 +23,6 @@ const Search = () => {
 
   const clear = () => {
     console.log("clear");
-    // clearSearch();
     reset();
   };
 
@@ -36,22 +34,30 @@ const Search = () => {
           padding: "2px 4px",
           display: "flex",
           alignItems: "center",
-          width: 400,
+          width: 350,
           height: 40,
         }}
         onSubmit={handleSubmit(onSubmit)}
       >
         <InputBase
           {...register("search", { required: true, min: 4 })}
-          style={{ width: 320 }}
+          style={{ width: 250 }}
           placeholder="Search POKEMONS"
         />
         <Divider orientation="vertical" />
-        <IconButton type="submit" aria-label="search">
+        <IconButton
+          style={{ margin: "0 5px" }}
+          type="submit"
+          aria-label="search"
+        >
           <SearchIcon />
         </IconButton>
         <Divider orientation="vertical" />
-        <IconButton onClick={clear} aria-label="clear">
+        <IconButton
+          style={{ margin: "0 5px" }}
+          onClick={clear}
+          aria-label="clear"
+        >
           <ClearIcon />
         </IconButton>
       </Paper>
@@ -60,4 +66,4 @@ const Search = () => {
   );
 };
 
-export default Search;
+export default SearchBar;

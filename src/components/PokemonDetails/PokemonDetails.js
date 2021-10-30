@@ -1,7 +1,8 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { getPokemon } from "../../api/api";
-import Card from "./Card";
+import Card from "./components/Card";
+import BackToMainButton from "./components/BackToMainButton";
 import "./pokemonDetails.css";
 
 const PokemonDetails = () => {
@@ -16,7 +17,16 @@ const PokemonDetails = () => {
     getPokemonDetails();
   }, [pokemonName]);
 
-  return <>{pokemon ? <Card pokemon={pokemon} /> : <p>is loading...</p>}</>;
+  return (
+    <>
+      <BackToMainButton />
+      {pokemon ? (
+        <Card pokemon={pokemon} />
+      ) : (
+        <div className="loader">is loading...</div>
+      )}
+    </>
+  );
 };
 
 export default PokemonDetails;

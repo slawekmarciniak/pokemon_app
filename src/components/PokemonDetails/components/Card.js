@@ -1,5 +1,4 @@
 const Card = ({ pokemon }) => {
-  console.log(pokemon);
   return (
     <div className="card">
       <img className="card__img" src={pokemon.sprites.front_default} alt="" />

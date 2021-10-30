@@ -4,14 +4,14 @@ import { AppContext } from "../../AppContext/AppContext";
 import Button from "@mui/material/Button";
 
 const ListElement = ({ name, index }) => {
-  const { pokemons } = useContext(AppContext);
+  const { pokemons, setIsShowCard } = useContext(AppContext);
   let history = useHistory();
   const handleClick = () => {
+    setIsShowCard(true);
     history.push(name);
   };
 
   const pokemonIndex = pokemons.findIndex((e) => e.name === name);
-  console.log(pokemons);
 
   return (
     <li className="list__item">
