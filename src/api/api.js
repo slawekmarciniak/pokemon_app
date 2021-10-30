@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const baseUrl = "https://pokeapi.co/api/v2/pokemon";
-const numberOfAllPokemons = 1118;
+const numberOfAllPokemons = 898;
 
 const config = {
   method: "get",

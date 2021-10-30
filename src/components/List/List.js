@@ -9,14 +9,8 @@ import "./list.css";
 import PaginationList from "./components/Pagination";
 
 const List = () => {
-  const { pokemons, setPokemons, foundPokemons, isSearching } =
+  const { pokemons, setPokemons, foundPokemons, isSearching, pagination } =
     useContext(AppContext);
-  const [listSize, setListSize] = useState({
-    start: 1,
-    end: 50,
-  });
-
-  console.log(foundPokemons);
 
   useEffect(() => {
     if (!pokemons) {
@@ -29,7 +23,7 @@ const List = () => {
   }, [pokemons, setPokemons]);
 
   const shortList =
-    pokemons && pokemons.slice(listSize.start - 1, listSize.end - 1);
+    pokemons && pokemons.slice(pagination.pageStart, pagination.pageEnd);
 
   return (
     <>
