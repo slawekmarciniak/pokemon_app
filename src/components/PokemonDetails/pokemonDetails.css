@@ -21,7 +21,6 @@
 .feature__text {
     text-transform: uppercase;
     font-weight: bold;
-
 }
 
 .feature__name {
@@ -32,8 +31,10 @@
 
 .feature__element {
     background-color: #3A5CA7;
+    text-transform: uppercase;
     padding: 6px;
     color: white;
+    white-space: nowrap;
     border-radius: 4px;
     margin-right: 20px;
     /* font-weight: bold; */
@@ -45,7 +46,7 @@
 
 .card__img {
     height: 150px;
-    background-color: #222;
+    background-color: #E74C3C;
     border-radius: 50%;
 }
 

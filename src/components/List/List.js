@@ -28,18 +28,21 @@ const List = () => {
   return (
     <>
       {isSearching && (
-        <div className="list">
-          <ListMUI>
-            {foundPokemons.map((el, index) => (
-              <ListElement
-                key={el.name}
-                name={el.name}
-                url={el.url}
-                index={index}
-              />
-            ))}
-          </ListMUI>
-        </div>
+        <>
+          <div className="results">results: {foundPokemons.length}</div>
+          <div className="list">
+            <ListMUI>
+              {foundPokemons.map((el, index) => (
+                <ListElement
+                  key={el.name}
+                  name={el.name}
+                  url={el.url}
+                  index={index}
+                />
+              ))}
+            </ListMUI>
+          </div>
+        </>
       )}
 
       {pokemons ? (

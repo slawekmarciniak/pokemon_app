@@ -44,3 +44,14 @@
     margin: 50px auto;
     width: 150px;
 }
+
+.results {
+    margin: auto;
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 30px;
+    font-size: 18px;
+    color: #3368B0;
+    font-weight: bold;
+    letter-spacing: 1.3px;
+}

@@ -6,3 +6,8 @@
 .input {
     background-color: red;
 }
+
+.error {
+    color: white;
+    font-size: 9px;
+}

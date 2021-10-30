@@ -8,7 +8,8 @@ import ClearIcon from "@mui/icons-material/Clear";
 import "./search.css";
 
 const SearchBar = () => {
-  const { searchPokemons } = useContext(AppContext);
+  const { searchPokemons, setIsSearching, setFoundPokemons } =
+    useContext(AppContext);
   const {
     register,
     handleSubmit,
@@ -17,12 +18,13 @@ const SearchBar = () => {
   } = useForm();
 
   const onSubmit = (data) => {
-    console.log(data.search);
     return searchPokemons(data.search);
   };
 
   const clear = () => {
-    console.log("clear");
+    setIsSearching(false);
+    setFoundPokemons(null);
+
     reset();
   };
 
@@ -40,7 +42,11 @@ const SearchBar = () => {
         onSubmit={handleSubmit(onSubmit)}
       >
         <InputBase
-          {...register("search", { required: true, min: 4 })}
+          {...register("search", {
+            required: true,
+            minLength: 2,
+            pattern: /^[A-Za-z]+$/i,
+          })}
           style={{ width: 250 }}
           placeholder="Search POKEMONS"
         />
@@ -61,7 +67,15 @@ const SearchBar = () => {
           <ClearIcon />
         </IconButton>
       </Paper>
-      {errors.search && <span>! This field is required</span>}
+      {errors.search?.type === "required" && (
+        <span className="error">* This field is required</span>
+      )}
+      {errors.search?.type === "minLength" && (
+        <span className="error">* Write min. 2 letters </span>
+      )}
+      {errors.search?.type === "pattern" && (
+        <span className="error">* Only letters are allowed</span>
+      )}
     </form>
   );
 };
