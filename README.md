@@ -12,6 +12,8 @@ Pokemon App - show all Pokemons and display details of chosen Pokemon.
 <br>
 :white_check_mark: React Router
 <br>
+:white_check_mark: React-Hook-Form
+<br>
 :white_check_mark: Axios
 <br>
 :white_check_mark: CSS & Material UI
