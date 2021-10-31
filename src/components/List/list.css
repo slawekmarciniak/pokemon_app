@@ -1,6 +1,6 @@
 
 .list {
-    min-width: 300px;
+    /* min-width: 300px; */
     max-width: 1000px;
     padding: 30px;
     margin: auto;
@@ -30,11 +30,13 @@
     letter-spacing: 1.4px;
 }
 
+
 .list__avatar {
     height: 100px;
     background-color: #FFCB05;
     border-radius: 50%;
 }
+
 
 .loader {
     color: #FFCB05;
@@ -55,3 +57,17 @@
     font-weight: bold;
     letter-spacing: 1.3px;
 }
+
+
+@media only screen and (max-width: 620px) {
+    
+    .list__item {
+        flex-direction: column;
+    }
+    .list__avatar {
+       margin: 20px auto 5px auto;
+    }
+    .list__name {
+        margin: 20px auto;
+    }
+     }

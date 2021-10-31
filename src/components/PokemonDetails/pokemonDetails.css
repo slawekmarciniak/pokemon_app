@@ -1,6 +1,7 @@
 .card {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     background-color: #FFCB05;
     border-radius: 5px;
@@ -42,6 +43,7 @@
 }
 .feature__element--abilities {
     background-color: red;
+    margin-top: 20px;
 }
 
 .card__img {
@@ -65,3 +67,22 @@
     justify-content: center;
     margin-bottom: 40px;
 }
+
+.feature__abilities {
+    display: flex;
+}
+
+@media only screen and (max-width: 800px) {
+    .card {
+    width: 100%;
+    margin: auto;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+
+    }
+    .feature__element--abilities {
+        display: flex;
+        flex-direction: column;
+    }
+     }

@@ -31,12 +31,13 @@ const SearchBar = () => {
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <Paper
+        className="search"
         style={{
           backgroundColor: "rgb(255, 203, 5)",
           padding: "2px 4px",
           display: "flex",
           alignItems: "center",
-          width: 350,
+          width: 315,
           height: 40,
         }}
         onSubmit={handleSubmit(onSubmit)}

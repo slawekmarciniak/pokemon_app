@@ -22,8 +22,14 @@ const ListElement = ({ name, index }) => {
         }.png`}
         alt="pokemon"
       />
-      {name}
-      <Button color="inherit" variant="outlined" onClick={handleClick}>
+      <div className="list__name">{name}</div>
+
+      <Button
+        className="details"
+        color="inherit"
+        variant="outlined"
+        onClick={handleClick}
+      >
         check details
       </Button>
     </li>

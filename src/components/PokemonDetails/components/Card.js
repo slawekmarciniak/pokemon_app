@@ -22,12 +22,14 @@ const Card = ({ pokemon }) => {
         <span className="feature__text">{pokemon.height}</span>
       </div>
       <div className="feature">
-        <p className="feature__name">abilities:</p>
-        {pokemon.abilities.map((el) => (
-          <div className="feature__element feature__element--abilities">
-            {el.ability.name}
-          </div>
-        ))}
+        <div className="feature__name">abilities:</div>
+        <div classNam="feature__abilities">
+          {pokemon.abilities.map((el) => (
+            <div className="feature__element feature__element--abilities">
+              {el.ability.name}
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
