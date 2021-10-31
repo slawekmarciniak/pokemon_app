@@ -20,7 +20,7 @@
 }
 
 .list__item {
-    margin-top: 20px;
+
     text-transform: uppercase;
     display: flex;
     align-items: center;
@@ -28,6 +28,7 @@
     color: #FFCB05;
     font-weight: bold;
     letter-spacing: 1.4px;
+    padding: 20px 0;
 }
 
 
@@ -58,6 +59,10 @@
     letter-spacing: 1.3px;
 }
 
+.list__item--even {
+    background-color: #e43e2c94;
+    
+}
 
 @media only screen and (max-width: 620px) {
     

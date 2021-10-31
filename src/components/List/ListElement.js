@@ -14,7 +14,7 @@ const ListElement = ({ name, index }) => {
   const pokemonIndex = pokemons.findIndex((e) => e.name === name);
 
   return (
-    <li className="list__item">
+    <li className={`list__item ${index % 2 === 0 && "list__item--even"}`}>
       <img
         className="list__avatar"
         src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${
