@@ -14,7 +14,7 @@ Pokemon App - show all Pokemons and display details of chosen Pokemon.
 <br>
 :white_check_mark: Axios
 <br>
-:white_check_mark: custom styles & Material UI
+:white_check_mark: CSS & Material UI
 <br>
 :white_check_mark: Basic mobile responsive options
 <br>
