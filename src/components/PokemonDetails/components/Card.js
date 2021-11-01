@@ -1,3 +1,5 @@
+import { v4 as uuidv4 } from "uuid";
+
 const Card = ({ pokemon }) => {
   return (
     <div className="card">
@@ -9,7 +11,9 @@ const Card = ({ pokemon }) => {
       <div className="feature">
         <span className="feature__name">types:</span>
         {pokemon.types.map((type) => (
-          <div className="feature__element">{type.type.name}</div>
+          <div key={uuidv4()} className="feature__element">
+            {type.type.name}
+          </div>
         ))}
       </div>
       <div className="feature">
@@ -23,9 +27,12 @@ const Card = ({ pokemon }) => {
       </div>
       <div className="feature">
         <div className="feature__name">abilities:</div>
-        <div classNam="feature__abilities">
+        <div className="feature__abilities">
           {pokemon.abilities.map((el) => (
-            <div className="feature__element feature__element--abilities">
+            <div
+              key={uuidv4()}
+              className="feature__element feature__element--abilities"
+            >
               {el.ability.name}
             </div>
           ))}
