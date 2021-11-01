@@ -18,12 +18,14 @@ Pokemon App - show all Pokemons and display details of chosen Pokemon.
 <br>
 :white_check_mark: CSS & Material UI
 <br>
-:white_check_mark: Basic mobile responsive options
+:white_check_mark: Basic mobile responsive design
 <br>
 :white_check_mark: Functional Components
 <br>
+:white_check_mark: Firebase
+<br>
 
-## Available Scripts:
+## How to use:
 
 Clone repository
 
