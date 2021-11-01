@@ -1,6 +1,13 @@
 {
   "short_name": "React App",
   "name": "Create React App Sample",
+  "icons": [
+    {
+      "src": "Pokemon.png",
+      "type": "image/png",
+      "sizes": "3125x3125"
+    }
+  ],
   "start_url": ".",
   "display": "standalone",
   "theme_color": "#000000",
