@@ -58,6 +58,7 @@ const List = () => {
               />
             ))}
           </ListMUI>
+          <PaginationList />
         </div>
       ) : (
         <div className="loader">is Loading</div>
