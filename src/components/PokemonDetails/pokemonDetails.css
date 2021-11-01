@@ -70,11 +70,12 @@
 
 .feature__abilities {
     display: flex;
+    flex-direction: column;
 }
 
 @media only screen and (max-width: 800px) {
     .card {
-    width: 100%;
+    width: 90%;
     margin: auto;
     overflow: hidden;
     display: flex;
