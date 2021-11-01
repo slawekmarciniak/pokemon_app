@@ -5,23 +5,10 @@ import Button from "@mui/material/Button";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 
 const BackToMainButton = () => {
-  const {
-    setIsShowCard,
-    setIsSearching,
-    setFoundPokemons,
-    setPage,
-    setPagination,
-  } = useContext(AppContext);
+  const { resetSearchAndShowCard } = useContext(AppContext);
   let history = useHistory();
   const handleClick = () => {
-    setIsShowCard(false);
-    setIsSearching(false);
-    setFoundPokemons(null);
-    setPage(1);
-    setPagination({
-      pageStart: 0,
-      pageEnd: 49,
-    });
+    resetSearchAndShowCard();
     history.goBack();
   };
 

@@ -9,6 +9,8 @@ const PokemonDetails = () => {
   const [pokemon, setPokemon] = useState(null);
   let { pokemonName } = useParams();
 
+  console.log("pokemon name", pokemonName);
+
   useEffect(() => {
     const getPokemonDetails = async () => {
       const result = await getPokemon(pokemonName);

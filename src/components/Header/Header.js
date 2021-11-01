@@ -1,11 +1,10 @@
-import { useContext } from "react";
-import { AppContext } from "../../AppContext/AppContext";
-
+import { useLocation } from "react-router-dom";
 import SearchBar from "../SearchBar";
 import "./header.css";
 
 const Header = () => {
-  const { isShowCard } = useContext(AppContext);
+  const location = useLocation();
+  const isHomePath = location.pathname === "/" ? true : false;
   return (
     <div className="header">
       <img
@@ -13,7 +12,7 @@ const Header = () => {
         src="https://upload.wikimedia.org/wikipedia/commons/9/98/International_Pok%C3%A9mon_logo.svg"
         alt="pokemon_logo"
       />
-      {!isShowCard && <SearchBar />}
+      {isHomePath && <SearchBar />}
       <img className="header__image" src="./Pokemon.png" alt="pokemon__image" />
     </div>
   );

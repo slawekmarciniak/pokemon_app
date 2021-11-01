@@ -21,6 +21,17 @@ const AppProvider = ({ children }) => {
     setIsSearching(true);
   };
 
+  const resetSearchAndShowCard = () => {
+    setIsShowCard(false);
+    setPage(1);
+    setFoundPokemons(null);
+    setIsSearching(false);
+    setPagination({
+      pageStart: 0,
+      pageEnd: 49,
+    });
+  };
+
   return (
     <AppContext.Provider
       value={{
@@ -37,6 +48,7 @@ const AppProvider = ({ children }) => {
         setPagination,
         isShowCard,
         setIsShowCard,
+        resetSearchAndShowCard,
       }}
     >
       {children}
