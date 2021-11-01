@@ -11,7 +11,6 @@ const AppProvider = ({ children }) => {
     pageStart: 0,
     pageEnd: 49,
   });
-  const [isShowCard, setIsShowCard] = useState(false);
 
   const searchPokemons = (name) => {
     const duplicates = pokemons.filter(
@@ -22,7 +21,6 @@ const AppProvider = ({ children }) => {
   };
 
   const resetSearchAndShowCard = () => {
-    setIsShowCard(false);
     setPage(1);
     setFoundPokemons(null);
     setIsSearching(false);
@@ -46,8 +44,6 @@ const AppProvider = ({ children }) => {
         setPage,
         pagination,
         setPagination,
-        isShowCard,
-        setIsShowCard,
         resetSearchAndShowCard,
       }}
     >

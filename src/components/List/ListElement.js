@@ -4,10 +4,10 @@ import { AppContext } from "../../AppContext/AppContext";
 import Button from "@mui/material/Button";
 
 const ListElement = ({ name, index }) => {
-  const { pokemons, setIsShowCard } = useContext(AppContext);
+  const { pokemons, resetSearchAndShowCard } = useContext(AppContext);
   let history = useHistory();
   const handleClick = () => {
-    setIsShowCard(true);
+    resetSearchAndShowCard();
     history.push(name);
   };
 
