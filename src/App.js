@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import PokemonDetails from "./components/PokemonDetails";
 import Header from "./components/Header";
 import List from "./components/List";
-import "./app.css";
+import "./App.css";
 
 const App = () => {
   return (
